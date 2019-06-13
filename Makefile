@@ -17,7 +17,6 @@ TEST_OBJ = $(patsubst $(SRC_DIR)/%.c,$(SRC_BUILD_DIR)/%.o,$(filter $(SRC_DIR)/%.
 		   $(patsubst $(TEST_DIR)/%.c,$(TEST_BUILD_DIR)/%.o,$(filter $(TEST_DIR)/%.c, $(TEST_SRC)))
 
 EXE = aoc2015
-TEST_EXE = aoc2015_test
 
 RM = rm -r
 MKDIR_P = mkdir -p
