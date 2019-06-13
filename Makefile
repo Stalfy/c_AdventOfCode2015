@@ -16,11 +16,6 @@ TEST_SRC = $(TEST_DIR)/main.c $(wildcard $(TEST_DIR)/**/*.c) $(filter-out $(SRC_
 TEST_OBJ = $(patsubst $(SRC_DIR)/%.c,$(SRC_BUILD_DIR)/%.o,$(filter $(SRC_DIR)/%.c, $(TEST_SRC))) \
 		   $(patsubst $(TEST_DIR)/%.c,$(TEST_BUILD_DIR)/%.o,$(filter $(TEST_DIR)/%.c, $(TEST_SRC)))
 
-$(info $(SRC))
-$(info $(TEST_SRC))
-$(info $(OBJ))
-$(info $(TEST_OBJ))
-
 EXE = aoc2015
 TEST_EXE = aoc2015_test
 
