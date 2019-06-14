@@ -3,8 +3,8 @@
 
 #include "reader.h"
 
-char* read_file(char* filename) {
-    FILE *file = fopen(filename, "r");
+char * read_file(char * filename) {
+    FILE * file = fopen(filename, "r");
     if(NULL == file) {
         printf("Invalid file name.\n");
         return NULL;
@@ -14,7 +14,7 @@ char* read_file(char* filename) {
     long characters = ftell(file);
     rewind(file);
 
-    char* content = malloc(characters * sizeof(char));
+    char * content = malloc(characters * sizeof(char));
     for(long i = 0; i < characters - 1; i++) {
         content[i] = fgetc(file);
     }

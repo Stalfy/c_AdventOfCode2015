@@ -4,7 +4,7 @@
 
 #include "day01.h"
 
-char* day01_part_one(char* input) {
+char * day01_part_one(char * input) {
     int length = strlen(input);
     int counter = 0;
 
@@ -12,11 +12,11 @@ char* day01_part_one(char* input) {
         counter += ('(' == input[i]) ? 1 : -1;
     }
 
-    char* buffer = malloc(10);
+    char * buffer = malloc(10);
     sprintf(buffer, "%d", counter);
     return buffer;
 }
 
-char* day01_part_two() {
+char * day01_part_two(char * input) {
     return "two";
 }

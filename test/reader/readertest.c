@@ -5,7 +5,7 @@
 #include "readertest.h"
 
 void test_read_file() {
-    char* result = read_file("a");
+    char * result = read_file("a");
     assert(NULL == result);
 
     result = read_file("test/artifacts/readertest.txt");

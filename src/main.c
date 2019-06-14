@@ -5,12 +5,12 @@
 #include "reader/reader.h"
 #include "day01/day01.h"
 
-char* (* part_one)();
-char* (* part_two)();
+char * (* part_one)();
+char * (* part_two)();
 
-void display_result(char* part, char* result, struct timeval tvs, struct timeval tve);
+void display_result(char * part, char * result, struct timeval tvs, struct timeval tve);
 
-int main(int argc, char* argv[]) {
+int main(int argc, char * argv[]) {
     int puzzle;
     char * input;
     char * input_filename;
@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
     return EXIT_SUCCESS;
 }
 
-void display_result(char* part, char* result, struct timeval tvs, struct timeval tve) {
+void display_result(char * part, char * result, struct timeval tvs, struct timeval tve) {
     long s = tvs.tv_sec * 1000000 + tvs.tv_usec;
     long e = tve.tv_sec * 1000000 + tve.tv_usec;
     long delta = e - s;
