@@ -5,8 +5,8 @@
 #include "reader/reader.h"
 #include "day01/day01.h"
 
-char * (* part_one)();
-char * (* part_two)();
+char * (* part_one)(char * input);
+char * (* part_two)(char * input);
 
 void display_result(char * part, char * result, struct timeval tvs, struct timeval tve);
 
@@ -40,7 +40,7 @@ int main(int argc, char * argv[]) {
     printf("\n");
 
     gettimeofday(&tvs, NULL);
-    result = part_two();
+    result = part_two(input);
     gettimeofday(&tve, NULL);
     display_result("two", result, tvs, tve);
 

@@ -6,17 +6,27 @@
 
 char * day01_part_one(char * input) {
     int length = strlen(input);
-    int counter = 0;
+    int floor = 0;
 
     for(int i = 0; i < length; i++) {
-        counter += ('(' == input[i]) ? 1 : -1;
+        floor += ('(' == input[i]) ? 1 : -1;
     }
 
-    char * buffer = malloc(10);
-    sprintf(buffer, "%d", counter);
+    char * buffer = malloc(15);
+    sprintf(buffer, "%d", floor);
     return buffer;
 }
 
 char * day01_part_two(char * input) {
-    return "two";
+    int floor = 0;
+    int counter = 0;
+    
+    while(-1 < floor) {
+        floor += ('(' == input[counter]) ? 1 : -1;
+        counter++;
+    }
+
+    char * buffer = malloc(15);
+    sprintf(buffer, "%d", counter);
+    return buffer;
 }

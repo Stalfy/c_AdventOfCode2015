@@ -34,6 +34,9 @@ void test_day01_part_one() {
 }
 
 void test_day01_part_two() {
-    char * result = day01_part_two();
-    assert(0 == strcmp("two", result));
+    char * result = day01_part_two(")");
+    assert(0 == strcmp("1", result));
+
+    result = day01_part_two("()())");
+    assert(0 == strcmp("5", result));
 }
