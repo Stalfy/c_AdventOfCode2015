@@ -16,7 +16,7 @@ if [ 0 -eq $isTestPassed ]; then
     echo ""
     echo ">>>"
 
-    ./aoc2015
+    ./aoc2015 $1
 
     echo "<<<"
     echo ""

@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -Wall -fPIC -fopenmp -m64 -O3
-LFLAGS = -Wall -fPIC -fopenmp -m64
+CFLAGS = -Wall -fPIC -m64 -O3
+LFLAGS = -Wall -fPIC -m64
 
 SRC_DIR = src
 TEST_DIR = test
