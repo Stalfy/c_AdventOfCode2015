@@ -11,5 +11,8 @@ int main() {
     test_day01_part_one();
     test_day01_part_two();
 
+    test_day02_part_one();
+    test_day02_part_two();
+
     return EXIT_SUCCESS;
 }
