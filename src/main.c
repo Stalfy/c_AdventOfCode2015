@@ -3,10 +3,7 @@
 #include <sys/time.h>
 
 #include "reader/reader.h"
-#include "day01/day01.h"
-
-char * (* part_one)(char * input);
-char * (* part_two)(char * input);
+#include "solver/solver.h"
 
 void display_result(char * part, char * result, struct timeval tvs, struct timeval tve);
 
@@ -29,18 +26,17 @@ int main(int argc, char * argv[]) {
 
     input = read_file(input_filename);
 
-    part_one = day01_part_one;
-    part_two = day01_part_two;
+    Solver solver = get_solver(puzzle);
 
     gettimeofday(&tvs, NULL);
-    result = part_one(input);
+    result = solver.part_one(input);
     gettimeofday(&tve, NULL);
     display_result("one", result, tvs, tve);
 
     printf("\n");
 
     gettimeofday(&tvs, NULL);
-    result = part_two(input);
+    result = solver.part_two(input);
     gettimeofday(&tve, NULL);
     display_result("two", result, tvs, tve);
 
