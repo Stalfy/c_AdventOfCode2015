@@ -14,6 +14,7 @@ int count_lines(char * input);
 void parse_dimensions(int * arr, char * dimensions);
 void parse_input(int ** dimensions, int entries, char * input);
 int get_required_area(int entries, int ** dimensions);
+int get_required_ribbon(int entries, int ** dimensions);
 
 char * day02_part_one(char * input) {
     int entries = count_lines(input);
@@ -29,8 +30,15 @@ char * day02_part_one(char * input) {
 }
 
 char * day02_part_two(char * input) {
+    int entries = count_lines(input);
+
+    int ** dimensions = malloc(entries * sizeof(int *));
+    parse_input(dimensions, entries, input);
+
+    int required_ribbon = get_required_ribbon(entries, dimensions);
+
     char * buffer = malloc(15);
-    sprintf(buffer, "%d", 0);
+    sprintf(buffer, "%d", required_ribbon);
     return buffer;
 }
 
@@ -97,6 +105,32 @@ int get_required_area(int entries, int ** dimensions) {
         extra = extra < hl ? extra : hl;
 
         accumulator += 2 * lw + 2 * wh + 2 * hl + extra;
+    }
+
+    return accumulator;
+}
+
+int get_required_ribbon(int entries, int ** dimensions) {
+    int accumulator = 0;
+
+    int plw;
+    int plh;
+    int phw;
+
+    int ribbon;
+    int bow;
+
+    for(int i = 0; i < entries; i++) {
+        plw = 2 * dimensions[i][LENGTH] + 2 * dimensions[i][WIDTH];
+        plh = 2 * dimensions[i][LENGTH] + 2 * dimensions[i][HEIGHT];
+        phw = 2 * dimensions[i][HEIGHT] + 2 * dimensions[i][WIDTH];
+
+        ribbon = plw < plh ? plw : plh;
+        ribbon = ribbon < phw ? ribbon : phw;
+
+        bow = dimensions[i][LENGTH] * dimensions[i][WIDTH] * dimensions[i][HEIGHT];
+
+        accumulator += ribbon + bow;
     }
 
     return accumulator;

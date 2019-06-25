@@ -16,6 +16,12 @@ void test_day02_part_one() {
 }
 
 void test_day02_part_two() {
-    char * result = day02_part_two("");
-    assert(0 == strcmp("0", result));
+    char * result = day02_part_two("2x3x4");
+    assert(0 == strcmp("34", result));
+
+    result = day02_part_two("1x1x10");
+    assert(0 == strcmp("14", result));
+
+    result = day02_part_two("2x3x4\n1x1x10");
+    assert(0 == strcmp("48", result));
 }
